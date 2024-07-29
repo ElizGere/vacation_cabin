@@ -1,0 +1,587 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* basic reset */
+/* ----------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+input,
+button,
+select,
+a {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+/* custom properties */
+:root {
+  --black: #2b2726;
+  --black-green: #2d3126;
+  --black-green-slightly-transparent: rgba(45, 49, 38, .9);
+  --black-green-very-transparent: rgba(45, 49, 38, .6);
+  --dark-khaki: #867c61;
+  --light-khaki: #ccc6ac;
+  --dark-green: #59614b;
+  --dark-green-transparent: rgba(89, 97, 75, .5);
+  --light-green: #9e9b88;
+  --light-green-transparent: rgba(158, 155, 136, .7);
+  --white: #ede9dd;
+}
+
+/* global styles */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: var(--black-green);
+  color: var(--light-khaki);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* reusable styles */
+/* --------------- */
+.container {
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+/* buttons */
+.btn {
+  background-color: transparent;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: .6rem 4.5rem;
+  border: 1px solid var(--light-khaki);
+  border-radius: 10rem;
+  margin: 1.5rem auto;
+}
+
+.btn:hover {
+  background-color: var(--light-khaki);
+  color: var(--black-green);
+  transition: color .5s;
+  transition: background-color .5s ease;
+  
+}
+
+/* hide and show text */
+.txt-container {
+  position: relative;
+}
+
+.txt-content {
+  position: relative;
+  height: 65px;
+  overflow: hidden;
+}
+
+.txt-container.txt-active .txt-content {
+  height: auto;
+}
+
+.txt-content::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(transparent, var(--black-green));
+}
+
+.txt-container.txt-active .txt-content::before {
+  display: none;
+}
+
+.txt-btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  font-family: montserrat;
+  text-transform: lowercase;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  transition: color .5s;
+}
+
+.txt-btn:hover {
+  color: var(--dark-green); 
+}
+
+.txt-btn::before {
+  content: '... read more';
+}
+
+.txt-container.txt-active .txt-btn::before {
+  content: '... show less';
+}
+
+/* carousel */
+.carousel {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-btn {
+  position: absolute;
+  background: none;
+  width: 35px;
+  top: 50%;
+  transform: translate-Y(-50%);
+  z-index: 2;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  transition: scale .5s;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+  transform: scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 1rem;
+}
+
+.carousel-btn.next {
+  right: 1rem;
+}
+
+/* main page styles */
+/* ---------------- */
+
+/* header styles */
+.header.active {
+  background-color: var(--black-green-slightly-transparent);
+}
+
+.header {
+  width: 100%;
+  height: 6rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--light-khaki);
+  z-index: 999;
+}
+
+.nav {
+  align-items: center;
+  justify-content: space-between;
+  color: var(--light-khaki);
+  font-weight: 300;
+}
+
+.logo img {
+  width: 100px;
+  max-width: 70%;
+  z-index: 1500;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  position: relative;
+  z-index: 1500;
+}
+
+.hamburger-menu .menu-bars {
+  display: block;
+  width: 40px;
+}
+
+.hamburger-menu .menu-times {
+  display: none;
+}
+
+.menu-open .hamburger-menu .menu-times {
+  display: block;
+  width: 40px;
+}
+
+.menu-open .hamburger-menu .menu-bars {
+  display: none;
+}
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black-green-slightly-transparent);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .5s;
+  padding-bottom: 15rem;
+}
+
+.menu-open .nav-list {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.nav-link {
+  font-family: 'montserrat';
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color .5s;
+}
+
+.nav-link:hover {
+  color: var(--dark-green);
+}
+
+/* hero section styles */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(https://img.freepik.com/premium-photo/frame-house-woods-with-large-window-that-says-cabin-woods_889227-3321.jpg) center no-repeat;
+  background-size: cover;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: var(--black-green-very-transparent);
+  z-index: -1;
+}
+
+.main-heading {
+  text-shadow: 1px 1px 1rem rgba(0, 0, 0, .5);
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-family: 'montserrat';
+  font-size: 4.8rem;
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+/* booking section styles */
+.booking {
+  background-color: var(--black-green);
+}
+
+.book-form {
+  flex-direction: column;
+}
+
+.book-form-info {
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.input,
+.options {
+  width: 100%;
+  min-height: 2rem;
+  padding: 1rem;
+  background-color: var(--light-khaki);
+  color: var(--black-green);
+  letter-spacing: 2px;
+}
+
+/* about section styles */
+.about {
+  padding-top: 0rem;
+}
+
+.about-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-heading {
+  padding-bottom: 2.5rem;
+}
+
+.about-subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.txt-container {
+  flex-direction: column;
+  
+}
+
+/* gallery section styles */
+
+/* explore section styles */
+.explore-btn {
+  position: absolute;
+  width: 100%;
+  top: 85%;
+  left:30%;
+  z-index: 2;
+  border-radius: 25px;
+  padding: .3rem;
+  background: var(--black-green-very-transparent);
+  color: var(--light-green);
+  font-family: 'montserrat';
+  letter-spacing: 1.5px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  transition: color .5s;
+  /*transition: scale .5s;*/
+}
+
+.explore-btn-txt:hover {
+  /*transform: scale(1.1);*/
+  color: var(--light-khaki);
+}
+
+/* footer styles */
+.footer {
+  padding: 5rem 0;
+}
+
+.footer-content-brand {
+  margin-bottom: 5rem;
+}
+
+.footer-logo-txt {
+  font-family: montserrat;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.footer-heading {
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.sm-link {
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 2rem;
+  color: var(--light-khaki);
+  border: 1px solid var(--light-khaki);
+  border-radius: 25%;
+  display: flex;
+  margin-right: 1rem;
+  transition: background-color .5s;
+  transition: color .5s;
+}
+
+.sm-link:hover {
+  background-color: var(--light-khaki);
+  color: var(--black-green);
+}
+
+.sm-link i {
+  margin: auto;
+}
+
+/* media queries */
+@media screen and (min-width: 668px) {
+  /* booking section styles */
+  .book-form {
+    margin-bottom: 2rem;
+  }
+
+  .book-form-info {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .input, 
+  .options {
+    min-width: 12rem;
+  }
+
+  /* footer styles */
+  .footer {
+    overflow-x: hidden;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 3rem;
+  }
+
+  .footer-content-brand {
+    margin-bottom: 0;
+  }
+
+  .paragpraph {
+    margin-top: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 110rem;
+  }
+  /* header styles */
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-list {
+    opacity: 1;
+    transform: scale(1);
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    flex-direction: row;  
+    justify-content: initial;
+    padding: 0;
+  }
+
+  .nav-item:not(:last-child) {
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+
+  /* hero section styles */
+  .title {
+    font-size: 6rem;
+  }
+
+  /* booking section styles */
+  .book-form-info {
+    gap: 3rem;
+  }
+
+  .input, 
+  .options {
+    min-width: 15rem;
+  }
+
+  /* footer styles */
+  .footer-content {
+    margin: 0 5rem;
+  }
+}
+
+
+

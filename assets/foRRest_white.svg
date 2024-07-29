@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="graphic_element" data-name="graphic element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.01 52.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 9px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #ece8dc;
+      }
+
+      .cls-2 {
+        fill: #ece8dc;
+        stroke-miterlimit: 10;
+        stroke-width: .81px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="31.37" cy="44" r="4.69" transform="translate(-17.08 67.92) rotate(-80.78)"/>
+  <g>
+    <polyline class="cls-1" points="4.5 47.49 46.02 4.5 90.51 47.47"/>
+    <line class="cls-1" x1="32.32" y1="21.08" x2="60.61" y2="48.4"/>
+  </g>
+</svg>

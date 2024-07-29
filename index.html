@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>foRRest Cabin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="header flex">
+    <div class="container">
+      <nav class="nav flex">
+        <a href="index.html" class="logo">
+          <img src="./assets/foRRest_light.svg" alt="logo">
+        </a>
+        <div class="hamburger-menu">
+          <i class="menu menu-bars"><img src="./assets/foRRest_menu.svg" alt="menu"></i>
+          <i class="menu menu-times"><img src="./assets/foRRest_menu.svg" alt="menu-close"></i>
+        </div>
+        <ul class="nav-list flex">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Special Offers</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero flex">
+      <div class="container">
+        <div class="main-heading">
+          <h2 class="subtitle">discover</h2>
+          <h1 class="title">foRRest Cabin</h1>
+        </div>
+        <a href="#gallery" class="btn gallery-btn">Gallery</a>
+      </div>
+    </section>
+
+    <section class="booking"> 
+      <div class="container">
+        <form action="" class="book-form flex">
+          <div class="book-form-info flex">
+            <div class="input-group">
+              <label for="check-in" class="input-label">Check in</label>
+              <input type="date" class="input" id="check-in">
+            </div>
+            <div class="input-group">
+              <label for="check-out" class="input-label">Check out</label>
+              <input type="date" class="input" id="check-out">
+            </div>
+            <div class="input-group">
+              <label for="adults" class="input-label">Adults</label>
+              <select name="" id="adults" class="options">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="children" class="input-label">Children</label>
+              <select name="" id="children" class="options">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn form-btn">Book Now</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container about-container flex">
+        <div class="about-heading">
+          <h2 class="subtitle about-subtitle">Escape to the serene</h2>
+          <h1 class="title about-title">foRRest Cabin</h1>
+        </div>
+        <div class="txt-container flex">
+          <div class="txt-content">
+            <p class="long-txt about-txt">Nested in the heart of a lush valley, where the rustling of leaves and gentle babbling of the nearby stream create a soothing melody that will melt away your worries. This charming retreat is designed to immerse you in nature, with walls of glass and wooden accents blending seamlessly into the surrounding forest. As you step inside, you'll be enveloped in a warm and cozy atmosphere, perfect for unwinding and rejuvenating. The cabin's private patio invites you to linger over a morning coffee or evening cocktail, surrounded by towering trees and the soft filter of sunlight. Whether you're seeking a romantic getaway, a solo escape, or a family adventure, FoRRest Cabin is the ultimate haven for relaxation and connection with nature. Let the peaceful sounds of the valley lull you into serenity, and rediscover the beauty of simplicity in this idyllic forest retreat. 
+            </p>
+          </div>
+          <a class="txt-btn about-txt-btn"></a>
+        </div>  
+       
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery cabin-gallery">
+      <div class="container">
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" data-carousel-button="prev">
+            <img src="./assets/arrow_left.svg" alt="previous">
+          </button>
+          <button class="carousel-btn next" data-carousel-button="next">
+            <img src="./assets/arrow_right.svg" alt="next">
+          </button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="https://beitcollections.com/cdn/shop/articles/casa-bosque-jardin_2000x.jpg?v=1643358899" alt="living-room">
+            </li>
+            <li class="slide">
+              <img src="https://cdn.homedit.com/wp-content/uploads/2021/08/Modern-Cabin-Russian-forest-Hill-House-cool-master-bedroom.jpg" alt="living-room">
+            </li>
+            <li class="slide">
+              <img src="https://img.freepik.com/premium-photo/illustration-hyperrealistic-modern-house-interior-bedroom-dark-wo_756405-24008.jpg" alt="living-room">
+            </li>
+            <li class="slide">
+              <img src="https://cdn.homedit.com/wp-content/uploads/2021/08/Modern-Cabin-Russian-forest-Hill-House-bedroom-decor.jpg" alt="living-room">
+            </li>
+          </ul>
+        </div>  
+      </div>
+    </section>
+
+    <section class="explore">
+      <div class="container">
+        <div class="txt-container flex">
+          <div class="txt-content">
+            <p class="long-txt explore-txt">
+              Immerse yourself in the tranquility of the Boga Valley, nestled in the heart of Bihor County, Romania. Surrounded by rolling hills and picturesque villages, the valley is a hidden gem waiting to be discovered. The air is crisp and clean, filled with the scent of wildflowers and freshly cut grass. As you wander through the valley, take in the stunning views of the surrounding mountains, where the Apuseni Mountains meet the plain. The Boga Valley is a nature lover's paradise, with its diverse flora and fauna thriving in this unspoiled landscape. From rare bird species to ancient forests and meadows bursting with wildflowers, every step reveals a new wonder. As night falls, gaze up at the star-filled sky, where constellations seem to twinkle like diamonds scattered across the velvet expanse.
+            </p>
+          </div>  
+          <a class="txt-btn"></a>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="gallery explore-gallery">
+      <div class="container">
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" data-carousel-button="prev">
+            <img src="./assets/arrow_left.svg" alt="previous">
+          </button>
+          <button class="carousel-btn next" data-carousel-button="next">
+            <img src="./assets/arrow_right.svg" alt="next">
+          </button>
+          <button class="explore-btn"><p class="explore-btn-txt">explore...</p></button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="https://sb.ecobnb.net/app/uploads/sites/3/2022/04/copertina-1-1170x490.jpg" alt="mountain-view">
+            </li>
+            <li class="slide">
+              <img src="https://img.freepik.com/premium-photo/majestic-mountain-with-lush-forest-its-foot_923558-3020.jpg" alt="mountain-view">
+            </li>
+            <li class="slide">
+              <img src="https://img.freepik.com/free-photo/beautiful-mountains-landscape_23-2150787850.jpg" alt="mountain-view">
+            </li>
+            <li class="slide">
+              <img src="https://img.lovepik.com/photo/48007/9551.jpg_wh860.jpg" alt="mountain-view">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-content-brand">
+          <a href="index.html" class="logo footer-logo">
+            <img src="./assets/foRRest_light.svg" alt="logo" class="footer-logo-img">
+            <h4 class="footer-logo-txt">foRRest Cabin</h4>
+          </a>
+          <p class="paragpraph">
+            Rooted in Relaxation, Surrounded by Serenity
+          </p>
+        </div>
+        <div class="social-media-wrap">
+          <h4 class="footer-heading">
+            Follow Us
+          </h4>
+          <div class="social-media flex">
+            <a href="#" class="sm-link">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="fa fa-pinterest"></i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="fa fa-tripadvisor"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <script src="./index.js"></script> 
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  -->
+</body>
+</html>
